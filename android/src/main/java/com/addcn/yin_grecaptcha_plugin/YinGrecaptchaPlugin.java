@@ -73,6 +73,14 @@ public class YinGrecaptchaPlugin implements MethodCallHandler {
                         }
                     }
                 });
+
+                task.addOnCanceledListener(registrar.activity(),
+               new OnCanceledListener() {
+                @Override
+                public void onCancel() {
+                    result.error(TAG, 'cancelled', null);
+                }
+                });
             } else {
                 result.error(TAG, "apiKey is null", null);
             }
