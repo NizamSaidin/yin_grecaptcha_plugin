@@ -16,6 +16,7 @@ import com.google.android.gms.safetynet.SafetyNetApi;
 import com.google.android.gms.safetynet.SafetyNetClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.Task;
 
 
@@ -77,7 +78,7 @@ public class YinGrecaptchaPlugin implements MethodCallHandler {
                 task.addOnCanceledListener(registrar.activity(),
                new OnCanceledListener() {
                 @Override
-                public void onCancel() {
+                public void onCanceled() {
                     result.error(TAG, "cancelled", null);
                 }
                 });
