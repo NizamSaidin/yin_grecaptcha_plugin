@@ -78,7 +78,7 @@ public class YinGrecaptchaPlugin implements MethodCallHandler {
                new OnCanceledListener() {
                 @Override
                 public void onCancel() {
-                    result.error(TAG, 'cancelled', null);
+                    result.error(TAG, "cancelled", null);
                 }
                 });
             } else {
